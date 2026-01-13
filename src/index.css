@@ -1,0 +1,232 @@
+/* ============================================
+   LEATHERLUX PREMIUM DESIGN SYSTEM
+   ============================================ */
+
+:root {
+  /* Color Palette - Luxury Leather Brand */
+  --color-espresso: #3d2817;
+  --color-espresso-dark: #2a1a0f;
+  --color-espresso-light: #5a3d28;
+  --color-black: #1a1a1a;
+  --color-black-soft: #2d2d2d;
+  --color-ivory: #f8f5f0;
+  --color-ivory-dark: #e8e3db;
+  --color-gold: #b8956a;
+  --color-gold-muted: #9d7f57;
+  --color-gold-light: #d4b896;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Montserrat', sans-serif;
+
+  /* Spacing Scale - Increased for luxury breathing room */
+  --space-xs: 0.75rem;
+  --space-sm: 1.5rem;
+  --space-md: 3rem;
+  --space-lg: 5rem;
+  --space-xl: 8rem;
+  --space-2xl: 12rem;
+
+  /* Shadows - Softer & More Refined */
+  --shadow-sm: 0 2px 12px rgba(61, 40, 23, 0.06);
+  --shadow-md: 0 8px 24px rgba(61, 40, 23, 0.08);
+  --shadow-lg: 0 16px 48px rgba(61, 40, 23, 0.12);
+  --shadow-hover: 0 20px 60px rgba(61, 40, 23, 0.16);
+
+  /* Luxury Motion Design - Calm, Confident Curves */
+  --ease-luxury: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-gentle: cubic-bezier(0.33, 0, 0.2, 1);
+
+  /* Transition Timings - Premium Feel */
+  --duration-fast: 400ms;
+  --duration-medium: 600ms;
+  --duration-slow: 800ms;
+  --duration-cinematic: 1200ms;
+
+  /* Legacy support */
+  --transition-smooth: all var(--duration-medium) var(--ease-luxury);
+  --transition-fast: all var(--duration-fast) var(--ease-smooth);
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Smooth scrolling with natural inertia */
+  scroll-padding-top: 80px;
+}
+
+/* Smooth scroll for webkit browsers */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-espresso);
+  background-color: var(--color-ivory);
+  overflow-x: hidden;
+
+  /* Optimize rendering for smooth animations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-espresso-dark);
+  margin-bottom: var(--space-sm);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-espresso);
+  margin-bottom: var(--space-sm);
+}
+
+.text-large {
+  font-size: 1.125rem;
+  line-height: 1.9;
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.container-narrow {
+  max-width: 900px;
+}
+
+.section-padding {
+  padding: var(--space-lg) 0;
+  overflow: hidden;
+}
+
+.section-lg {
+  padding: var(--space-xl) 0;
+}
+
+/* Subtle Animation Classes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reverting 'fade-up' to be visible by default for now to solve 'not visible' issue immediately */
+.fade-up {
+  opacity: 1;
+  transform: none;
+}
+
+/* Delay Utilities */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --space-lg: 3rem;
+    --space-xl: 4rem;
+    --space-2xl: 5rem;
+  }
+
+  .container {
+    padding: 0 var(--space-sm);
+  }
+}

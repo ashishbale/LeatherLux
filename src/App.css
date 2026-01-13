@@ -1,0 +1,19 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+}
+
+/* Luxury Section Transitions */
+section {
+  position: relative;
+  transition: opacity var(--duration-slow) var(--ease-luxury);
+}
+
+/* Increased breathing room between sections */
+section+section {
+  margin-top: var(--space-xl);
+}

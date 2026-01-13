@@ -1,0 +1,125 @@
+.brand-philosophy {
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.philosophy-image {
+    position: relative;
+    border-radius: 2px;
+}
+
+.philosophy-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--duration-medium) var(--ease-luxury);
+}
+
+.philosophy-image:hover img {
+    transform: scale(1.02);
+}
+
+/* Golden border decoration */
+.image-decoration {
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    right: 20px;
+    bottom: -20px;
+    border: 1px solid var(--color-gold);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.philosophy-content {
+    padding-left: var(--space-md);
+}
+
+.philosophy-content h2 {
+    font-size: 3rem;
+    color: var(--color-espresso);
+    margin-bottom: var(--space-sm);
+    line-height: 1.1;
+}
+
+.divider-small {
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-gold);
+    margin-bottom: var(--space-md);
+}
+
+.philosophy-content .text-large {
+    font-size: 1.25rem;
+    color: var(--color-espresso-dark);
+    margin-bottom: var(--space-md);
+    font-weight: 500;
+}
+
+.philosophy-content p {
+    font-size: 1.1rem;
+    color: var(--color-espresso-light);
+    margin-bottom: var(--space-sm);
+    line-height: 1.8;
+}
+
+.philosophy-stats {
+    display: flex;
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+    border-top: 1px solid rgba(184, 149, 106, 0.2);
+    padding-top: var(--space-md);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--color-gold);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-espresso);
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .philosophy-content {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .divider-small {
+        margin: 0 auto var(--space-md);
+    }
+
+    .philosophy-stats {
+        justify-content: center;
+    }
+
+    .image-decoration {
+        display: none;
+    }
+}
